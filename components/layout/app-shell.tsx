@@ -5,6 +5,7 @@ import type { AuthContext } from "@/lib/types/domain";
 import { hasRole } from "@/lib/auth/rbac";
 
 import { LogoutForm } from "@/components/layout/logout-form";
+import { RouteTransitionLoader } from "@/components/layout/route-transition-loader";
 import { SidebarNavLink } from "@/components/layout/sidebar-nav-link";
 
 interface AppShellProps extends PropsWithChildren {
@@ -27,6 +28,7 @@ export function AppShell({ children, context }: AppShellProps) {
 
   return (
     <div className="min-h-screen">
+      <RouteTransitionLoader />
       <div className="mx-auto grid min-h-screen max-w-[1440px] gap-6 px-4 py-6 lg:grid-cols-[260px_1fr]">
         <aside className="rounded-3xl border border-[var(--line)] bg-gradient-to-b from-white to-slate-50/70 p-5 shadow-[0_20px_38px_-28px_rgba(15,23,42,0.5)]">
           <div className="space-y-1 border-b border-[var(--line)] pb-4">
